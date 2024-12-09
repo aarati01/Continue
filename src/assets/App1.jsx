@@ -2,13 +2,13 @@ import { useRef, useState, useEffect } from 'react';
 
 const App = () => {
   const [count, setCount] = useState(0);
-  const ref = useRef();
+  const btnref = useRef();
 
   useEffect(() => {
     // Ensure the ref is ready before accessing its properties
 
       console.log("First rendering");
-      ref.current.style.backgroundColor = "red"
+      btnref.current.style.backgroundColor = "red"
     
   }, []); 
 
@@ -27,9 +27,10 @@ const App = () => {
   return (
     <div>
       <h1>{count}</h1>
-      <button ref={ref} onClick={() => setCount(count + 1)}>
+      <button ref={btnref} onClick={() => setCount(count + 1)}>
         Increment{count}
       </button>
+      <button onClick={()=>{btnref.current.style.display="none"}}>Change Me</button>
     </div>
   );
 };
