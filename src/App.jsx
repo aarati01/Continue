@@ -1,7 +1,13 @@
+import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 
 const App = () => {
   const [count, setCount] = useState(0);
+   const a=useRef(0)
+  useEffect(()=>{
+    a.current=a.current+1
+  console.log(`reRendaring the value of a is ${a.current}`)
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
